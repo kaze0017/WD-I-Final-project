@@ -1,0 +1,308 @@
+/* colors: #c78c06, #ffe6ac, #222, and white */
+/* font family: 'Open Sans' Google font for the webpage*/
+/******************default settings***********************/
+*,
+*:after,
+*:before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* makes Open Sans from google fonts the default (elements don't inherit html default font)*/
+html, input, textarea, button{
+    color: #222222;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;}
+h1 {
+    font-size: 4.5rem;
+    line-height: 6rem;
+    font-weight: 700;}
+h2{
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 700;}
+h3{ margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem;}
+h4{
+    font-size: 1.1rem;
+    font-weight: 700;}
+p{
+    margin-top: 0.8rem;
+    font-size:1rem;
+    line-height: 1.5rem;
+    font-weight: 400;}
+a{font-weight: 500;}
+i{font-size: 2rem;}
+label{
+    color:#222222;
+    line-height:2;}
+input{
+    color: #222222;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+img{width: 100%}
+
+/*****************************************************/
+/*************** reusable classes*********************/
+
+/*wrapper: frames it contents in 1200px window and adds margin*/
+.wrapper{
+    margin: 0px auto;
+    max-width: 1200px;
+}
+/*container: adjusts its contents on "y" axis with propper padding and space in between by default - changes to "x" axis when mneeded */
+.container{
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+button{
+    font-size: 1.5rem;;
+    font-weight: 600;
+    background-color: #222222;
+    color: white;
+    border: 0;
+    padding: 2rem;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/**************************************************/
+
+/******* section 1:Header - logo, navigation and search bar ******/
+
+/*Header: vertical container includes logo, nav, and search*/
+header {background-color: #222222;}
+.navigation{gap: 0px;}
+/*removes the default padding by container class*/ 
+nav >.container,form {padding: 0;}
+.logo{
+    background-color:#c78c06;
+    padding: 0.5vh 0;
+}
+.logo img{
+    height: 4rem; 
+    width: auto;}
+/*first item in nav has different color*/
+nav li:nth-child(1) a{
+    background-color: #c78c06;
+    color: #222222;
+}
+nav li{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+/*adjusts all links in the center of its parrent*/
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #c78c06;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+/*changes container default flex-direction to row and removes extra spaces*/
+.search {
+    flex-direction: row;
+    background-color: #222222;
+    gap: 0;
+}
+/*flex-grow: input fills all remaining space of search container*/
+.search  input {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    flex-grow:1;
+}
+/* search bar same size as magnifier button */
+.search  button{
+    border: 0;
+    padding: 0;
+}
+.search  button i{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    border: 1px solid #c78c06;
+    color: #c78c06;
+}
+
+header .welcome{
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* welcome page*/
+.welcome {
+    background-image: url(../images/main-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;   
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome > .grayback{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 3rem;
+}
+.welcome button{
+    background-color: #c78c06;
+    color: #222222;
+}
+/*********************************************************/
+
+/*********************section 2: about us*****************/
+#aboutus{background-color: #ffe6ac;}
+/*********************************************************/
+
+/**************section 3: services & vission**************/
+/*padding: removes default padding by container class*/
+.service{
+    padding: 0;
+    gap: 0px;
+    background-color: #ffe6ac;
+}
+/*makes the container of texts the same height*/
+.service .container{flex-grow:1;}
+.vision{
+    background-image: url(../images/vision.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    color: #fff;
+}
+.vision button{
+    color: #fff;
+    border: 1px solid #c78c06;
+}
+/********************************************************/
+/********************section 4: Team ********************/
+.member {
+    background-color: #ffe6ac;
+    padding: 0%;
+    gap: 0;
+}
+/*drows aline under occupation*/
+.member h4{
+    border-bottom: 2px solid #c78c06;
+}
+/**********************************************************/
+/**************section 5: contact & map********************/
+#contact input, #contact textarea,table,iframe{width: 100%;}
+#contact button{
+    padding: 0% 5px;
+    border: 0;
+    color: #c78c06;
+}
+thead{background-color:#FFE6AC;}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table caption{text-align: left;}
+table tr{line-height: 3rem;}
+tbody tr{
+    text-indent: 10px;
+    text-align: left;
+}
+/*forces the map to fill the location container*/
+iframe{
+    flex-grow: 1;
+    aspect-ratio: 1/1;
+}
+/*********************************************************/
+
+/********************section 5: footer *******************/
+footer{
+    background-color: #222222;
+    color: #c78c06;
+    padding: 20px;
+}
+footer a{color: #c78c06;}
+ /********************************************************/
+
+ /******************Media query***************************/
+ @media screen and (min-width: 760px){
+    /***********section: header***********/
+    /* changes the default flex-direction of navigation container from column to row*/
+    .navigation{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    /* allocates the space of navigation bar to logo/nav/search -> 1/5/2 */
+    .logo{flex-grow: 1; background-color:#222222;}
+    nav{flex-grow: 5;}
+    .search{flex-grow: 2;}
+    /*changes the default flex-direction of nav container to row */
+    .navigation ul{flex-direction: row;}
+    #aboutus > .container{flex-direction: row;}
+    /*divides the about us section equally for img and text*/
+    #aboutus > .container > div{width: 50%;}
+    #aboutus img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    /***********Services********/
+    /*changes the services section from a column style(flex) to two rows style(grid)*/
+    #services > .container{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: 
+        "s1 s1 s1 s2 s2 s2"
+        "s3 s3 s4 s4 s5 s5";
+        column-gap: 2vw;
+    }
+    .service:nth-child(1){grid-area: s1;}
+    .service:nth-child(2){grid-area: s2;}
+    .service:nth-child(3){grid-area: s3;}
+    .service:nth-child(4){grid-area: s4;}
+    .service:nth-child(5){grid-area: s5;}
+    .service button{width:100%}
+
+    /********team********/
+    /*removes unwanted gap between divs*/
+    #team .members{font-size: 0%; gap: 0;}
+    /*changes the style of each member(img + text) from column(flex) to row(flex)*/
+    #team .member:nth-child(2) {
+        flex-direction: row;
+        margin: 0;
+    }
+    #team .member:nth-child(3) {
+        flex-direction: row-reverse;
+    }
+    /*divides each member equally between two divs (photo and text*/
+    .member > div {width: 50%}
+    .member > .container{justify-content:flex-start;}
+
+    /*****contacts*****/
+    /*changes the contact section from a column style(flex) to two rows style(grid)*/
+    #contact >.wrapper > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "m1 l1"
+        "ho ho";
+        column-gap: 2vw;
+    }
+
+    #contact .message{grid-area: m1;}
+    #contact .location{grid-area: l1;}
+    #contact .hours{grid-area: ho;}
+    iframe{aspect-ratio: auto;}
+}
